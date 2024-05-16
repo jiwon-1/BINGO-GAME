@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINGO Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+        }
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            font-size: 2em;
+            cursor: pointer;
+            user-select: none;
+        }
+        .cell:hover {
+            background-color: #d0d0d0;
+        }
+        .message {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .restart-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .restart-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tic Tac Toe</h1>
+        <div class="board" id="board">
+            <div class="cell" onclick="makeMove(this, 0)"></div>
+            <div class="cell" onclick="makeMove(this, 1)"></div>
+            <div class="cell" onclick="makeMove(this, 2)"></div>
+            <div class="cell" onclick="makeMove(this, 3)"></div>
+            <div class="cell" onclick="makeMove(this, 4)"></div>
+            <div class="cell" onclick="makeMove(this, 5)"></div>
+            <div class="cell" onclick="makeMove(this, 6)"></div>
+            <div class="cell" onclick="makeMove(this, 7)"></div>
+            <div class="cell" onclick="makeMove(this, 8)"></div>
+        </div>
+        <div class="message" id="message">Player X's turn</div>
+        <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
